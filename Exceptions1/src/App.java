@@ -26,16 +26,16 @@ public class App {
                 +" pelo "+segundo+" é "+result;
 
                 System.out.println(mostrar);
-                
+                loop = false;
                 }
-                catch (InputMismatchException inputMismatchException){
-                    System.out.printf("\nExceção: %s\n", inputMismatchException);
-                    loop = true;
-                }catch (NumberFormatException numberFormatException){
+                catch (InputMismatchException exception){
+                    System.out.println("\nExceção:\n"+ exception.getMessage());
                     System.out.println("Você poderia digitar os numeros novamente? ");
-                    loop = true;
+                }catch(ArithmeticException case0){
+                    System.out.println("\nExceção:\n"+case0.getMessage());
+                    System.out.println("Você poderia digitar os numeros novamente? ");
                 }
-            }while(loop);
+            }while(loop == true);
             input.close();
         }
     
